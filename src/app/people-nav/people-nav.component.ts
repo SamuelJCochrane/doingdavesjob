@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from './people.service';
 
 @Component({
   selector: 'app-people-nav',
@@ -6,31 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./people-nav.component.scss']
 })
 export class PeopleNavComponent implements OnInit {
-  people: object[] = [
-    {
-      name: 'Dave',
-      id: 1
-    }, 
-    {
-      name: 'Steve',
-      id: 2
-    }, 
-    {
-      name: 'Sam',
-      id: 3
-    }, 
-    {
-      name: 'Shannon',
-      id: 4
-    }, 
-    {
-      name: 'Ben',
-      id: 5
-    }]
-
-  constructor() { }
+  people: object[];
+  constructor(private peopleService: PeopleService) { }
+  
 
   ngOnInit() {
+    this.people = this.peopleService.getPeople();
   }
 
 }

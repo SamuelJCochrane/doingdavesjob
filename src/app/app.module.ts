@@ -10,6 +10,7 @@ import { PersonComponent } from './people-nav/person/person.component';
 import { TimeBlockComponent } from './timetable/day-column/time-block/time-block.component';
 import { PeopleNavComponent } from './people-nav/people-nav.component';
 import { TimetableComponent } from './timetable/timetable.component';
+import { PeopleService } from './people-nav/people.service';
 
 const appRoutes: Routes = [
   { path: 'timetable', component: TimetableComponent },
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
     PersonComponent,
     TimeBlockComponent,
     PeopleNavComponent,
-    TimetableComponent
+    TimetableComponent,
   ],
   imports: [
     [
@@ -38,7 +39,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule
   ],
-  providers: [],
+  providers: [PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
