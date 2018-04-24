@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="increments minus" (click)="onDecrement()"></div>
+    <input type="text" [maxlength]="inputMaxLength" class="worker-quantity" [(ngModel)]="numOfPeople">
+    <div class="increments plus" (click)="onIncrement()"></div>
+</div>
