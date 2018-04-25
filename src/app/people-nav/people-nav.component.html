@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Employee</a>
+    <a class="navbar-brand">Employee</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,10 +7,95 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item" *ngFor="let person of people">
-                <a class="nav-link" (click)="changePerson(person)" [routerLink]="['/people/' + person.id]" routerLinkActive="active">{{person.name}}</a>
+                <a class="nav-link" [routerLink]="['/people/' + person.id]" routerLinkActive="active">{{person.name}}</a>
             </li>
         </ul>
         <button class="btn btn-success btn-add-person">Add Person</button>
     </div>
 </nav>
-{{personSelected.name}}
+<h3>Name: {{personSelected.name}}</h3>
+<hr>
+<h4>Total Hours</h4>
+<input type="text" [maxLength]="totalHoursMaxLength" [(ngModel)]="totalHours" class="total-hours-input">
+<h4>Availability</h4>
+
+<section class="grid">
+    <div class="grid__row">
+        <div class="col-1-of-7">
+            <h3>Monday</h3>
+            <div class="time-block">
+                <span>11:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['11:00']">
+            </div>
+            <div class="time-block">
+                <span>12:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['12:00']">
+            </div>
+            <div class="time-block">
+                <span>13:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['13:00']">
+            </div>
+            <div class="time-block">
+                <span>14:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['14:00']">
+            </div>
+            <div class="time-block">
+                <span>15:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['15:00']">
+            </div>
+            <div class="time-block">
+                <span>16:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['16:00']">
+            </div>
+            <div class="time-block">
+                <span>17:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['17:00']">
+            </div>
+            <div class="time-block">
+                <span>18:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['18:00']">
+            </div>
+            <div class="time-block">
+                <span>19:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['19:00']">
+            </div>
+            <div class="time-block">
+                <span>20:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['20:00']">
+            </div>
+            <div class="time-block">
+                <span>21:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['21:00']">
+            </div>
+            <div class="time-block">
+                <span>22:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['22:00']">
+            </div>
+            <div class="time-block">
+                <span>23:00</span>
+                <input type="checkbox" [(ngModel)]="timesAvailable.monday['23:00']">
+            </div>
+        </div>
+        <div class="col-1-of-7">
+            Col 1 of 7
+        </div>
+        <div class="col-1-of-7">
+            Col 1 of 7
+        </div>
+        <div class="col-1-of-7">
+            Col 1 of 7
+        </div>
+        <div class="col-1-of-7">
+            Col 1 of 7
+        </div>
+        <div class="col-1-of-7">
+            Col 1 of 7
+        </div>
+        <div class="col-1-of-7">
+            Col 1 of 7
+        </div>
+    </div>
+</section>
+<hr>
+<div class="button btn btn-primary" (click)="usefulFunc()">Save</div>
+

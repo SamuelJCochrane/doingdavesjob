@@ -5,3 +5,39 @@ nav {
 .btn-add-person {
     margin-left: 3rem;
 }
+
+.total-hours-input {
+    width: 2.5rem;
+}
+
+$gutter-horizontal: 3rem;
+
+.grid {
+    
+    &__row {
+        margin: 0 auto;
+        
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+
+        [class^="col-"] {
+            float: left;
+            background-color: orangered;
+    
+            &:not(:last-child) {
+                margin-right: $gutter-horizontal;
+            }
+        }
+
+        .col-1-of-7 {
+            width: calc((100% - #{$gutter-horizontal} * 6) / 7)
+        }
+    }
+}

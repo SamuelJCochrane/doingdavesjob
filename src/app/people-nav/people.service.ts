@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class PeopleService {
-  currentPerson: Subject<object> = new BehaviorSubject<object>(null);
+  currentPerson: Subject<object> = new Subject();
 
   constructor() { }
 
