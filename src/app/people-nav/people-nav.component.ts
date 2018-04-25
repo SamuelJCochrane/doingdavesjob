@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from './people.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-people-nav',
@@ -8,11 +9,15 @@ import { PeopleService } from './people.service';
 })
 export class PeopleNavComponent implements OnInit {
   people: object[];
-  constructor(private peopleService: PeopleService) { }
+  personSelected: object = {name: '', id: ''}
+  constructor(private peopleService: PeopleService, private activatedRoute: ActivatedRoute) { }
   
 
   ngOnInit() {
     this.people = this.peopleService.getPeople();
   }
 
+  changePerson(person) {
+    this.personSelected = person;
+  }
 }

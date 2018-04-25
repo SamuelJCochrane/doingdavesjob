@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class PeopleService {
+  currentPerson: Subject<object> = new BehaviorSubject<object>(null);
 
   constructor() { }
 
@@ -29,5 +33,11 @@ export class PeopleService {
 
     getPeople() {
       return this.people.slice();
+    }
+    
+    getPerson(id) {
+      this.getPeople().forEach((elem) => {
+        console.log(elem)
+      })
     }
 }
